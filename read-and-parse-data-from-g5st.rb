@@ -39,7 +39,7 @@ begin
       '家用PM10低8位', #'06_APM100_L8', # 59
       '0.3um以上颗粒个数高8位', #'07_003UM_H8', # 25, 0.3um in 0.1^3 m Air
       '0.3um以上颗粒个数低8位', #'07_003UM_L8', # 182
-      '0.5m以上颗粒个数高8位', #'08_005UM_H8', # 7
+      '0.5um以上颗粒个数高8位', #'08_005UM_H8', # 7
       '0.5um以上颗粒个数低8位', #'08_005UM_L8', # 140
       '1.0um以上颗粒个数高8位', #'09_010UM_H8', # 1
       '1.0um以上颗粒个数低8位', #'09_010UM_L8', # 44
@@ -139,7 +139,7 @@ begin
                     when mositure
                       value = format( '%.1f', value / 10.0 ).to_f
                   end
-                  human_pretty_data[ human_seq[index_in_human].to_s ] = value
+                  human_pretty_data[ human_seq[index_in_human]] = value
                 end
                 high_bit = !high_bit
               end
