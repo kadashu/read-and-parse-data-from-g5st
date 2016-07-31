@@ -79,12 +79,6 @@ begin
       '甲醛浓度',
       '温度',
       '湿度',
-      '16_RESE_H8',
-      '16_RESE_L8',
-      '17_VERSION',
-      '17_ERRCODE',
-      'SUM_H8',
-      'SUM_L8'
   ]
 
   formalin    = human_seq.find_index '甲醛浓度'
@@ -108,10 +102,10 @@ begin
           puts ' data is nil, must be worng. ignore me'
         else
           human_pretty_data = {}
+          #pretty_data = {}
           #puts "RAW format, class: #{data.class} => #{data}"
           check_sum   = 0x42 + 0x4d + frame_h8 + frame_l8
           high_bit    = true
-          #pretty_data = {}
           last_value  = nil
           data_array  = data.chars
           check_sum_readed = ( data_array[-2].ord << 8 ) + data_array[-1].ord
