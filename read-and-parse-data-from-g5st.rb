@@ -81,9 +81,9 @@ begin
       '湿度',
   ]
 
-  formalin    = human_seq.find_index '甲醛浓度'
+  HCHO        = human_seq.find_index '甲醛浓度'
   temperature = human_seq.find_index '温度'
-  mositure    = human_seq.find_index '湿度'
+  humidity    = human_seq.find_index '湿度'
 
   puts ' Waiting data ...'
   readin = sp.each_byte
@@ -126,11 +126,11 @@ begin
                   last_value = nil
                   index_in_human = x / 2
                   case index_in_human
-                    when formalin
+                    when HCHO
                       value = format( '%.4f', value / 1000.0 ).to_f
                     when temperature
                       value = format( '%.1f', value / 10.0 ).to_f + 3
-                    when mositure
+                    when humidity
                       value = format( '%.1f', value / 10.0 ).to_f
                   end
                   human_pretty_data[ human_seq[index_in_human]] = value
